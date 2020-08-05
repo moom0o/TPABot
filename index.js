@@ -11,10 +11,12 @@ var bot = mineflayer.createBot({
 
 bot.chatAddPattern(/^([^ ]*) wants to teleport to you\.$/, 'tpa', 'tpa message')
 bot.on('tpa', (username, message, type, rawMessage, matches) => {
+  if(whitelist.contains(username){
   bot.chat(`/msg ${username} Autoaccepting!`)
   setTimeout(() => {
-bot.chat(`/tpy ${username}`)
-}, 1 * 1000)
+  bot.chat(`/tpy ${username}`)
+  }, 1 * 1000)
+  }
 })
 
 bot.on('error', err => console.log(err))
